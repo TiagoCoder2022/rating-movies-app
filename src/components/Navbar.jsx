@@ -1,5 +1,5 @@
-import React from 'react'
-import { useState } from "react";
+import React, { useEffect, useRef } from 'react'
+
 
 const Navbar = ({ children }) => {  
   return (
@@ -19,6 +19,23 @@ export function Logo() {
 }
 
 export function Search({query, setQuery}) { 
+  const inputEl = useRef(null)
+
+  useEffect(function(){
+
+    function callback(e) {
+      if(document.activeElement === inputEl.current)
+      return
+      if (e.code === "Enter") {
+        inputEl.current.focus()
+        setQuery("")
+      }
+    }
+
+    document.addEventListener('keydown', callback)
+    return () => document.addEventListener("keydown", callback)
+  }, [])
+
   return (
     <input
       className="search"
@@ -26,6 +43,7 @@ export function Search({query, setQuery}) {
       placeholder="Search movies..."
       value={query}
       onChange={(e) => setQuery(e.target.value)}
+      ref={inputEl}
     />
   )
 }
