@@ -13,15 +13,14 @@
 .box::-webkit-scrollbar {
   display: none;
 }
- 
+
 .list::-webkit-scrollbar {
   display: none;
 }
- 
+
 .list-watched::-webkit-scrollbar {
   display: none;
 }
-
 
 * {
   margin: 0;
@@ -31,7 +30,6 @@
 
 html {
   font-size: 62.5%;
-  
 }
 
 body {
@@ -60,7 +58,7 @@ body {
   height: calc(100vh - 7.2rem - 3 * 2.4rem);
   display: flex;
   gap: 2.4rem;
-  justify-content: center;  
+  justify-content: center;
 }
 
 .box {
@@ -393,3 +391,114 @@ EMPTY STAR
 </svg>
 
 */
+@media (max-width: 900px) {
+  .logo span {
+    font-size: 2.5rem;
+  }
+
+  .logo h1 {
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .search {
+    width: 30rem;
+  }
+
+  .num-results {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: auto;
+  }
+  .logo span {
+    font-size: 2rem;
+  }
+
+  .logo h1 {
+    font-size: 2rem;
+  }
+
+  .search {
+    width: 25rem;
+  }
+
+  .num-results {
+    font-size: 1.5rem;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+  }
+
+  .box {
+    align-self: center;
+  }
+
+  .details-overview h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .logo span {
+    font-size: 3rem;
+    margin-right: 1.5rem;
+  }
+
+  .logo h1 {
+    display: none;
+  }
+
+  .search {
+    width: 20rem;
+    font-size: 1.4rem;
+  }
+
+  .num-results {
+    font-size: 1.2rem;
+    margin-left: 1.5rem;
+  }
+
+  .main {
+    margin-top: 2.4rem;
+    height: calc(100vh - 7.2rem - 3 * 2.4rem);
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+  }
+
+  .box {
+    width: auto;
+    min-width: 35rem;
+  }
+
+  .list h3 {
+    font-size: 1.5rem;
+  }
+
+  .list li {
+    font-size: 1.2rem;
+  }
+
+  .details-overview h2 {
+    font-size: 1.8rem;
+  }
+
+  .details {
+    line-height: 1.4;
+    font-size: 1.2rem;
+  }
+}
